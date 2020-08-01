@@ -1,4 +1,4 @@
-package com.cadastro.controller;
+package com.cadastro.demo.controller;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +34,7 @@ public class CadastroC {
 	}
 	
 	//criar cadastro método post
-	@PostMapping
+	@PostMapping( path = "/cadastro")
 	public ResponseEntity<CadastroM> Post(@RequestBody CadastroM email){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(email));
 	}

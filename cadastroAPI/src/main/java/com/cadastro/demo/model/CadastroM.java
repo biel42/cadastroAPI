@@ -5,9 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
 
 //fix project setup para baixar qualquer dependência
 
@@ -29,15 +26,14 @@ public class CadastroM {
 	private long id;
 	
 	@Column(name = "nomes", nullable = false, length = 90)
-	@Min(2)
+	
 	private String nome;
 	
-	@Email
+	
 	@Column(name = "emails", nullable = false, unique = true)
 	private String email;
 	
 	@Column(name = "senhas", nullable = false)
-	@Size(min = 6, max = 50)
 	private String senha;
 	
 }
